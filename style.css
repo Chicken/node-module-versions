@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+    --light-green: #68a063;
+    --dark-green: #3c873a;
+    --grey: #303030;
+}
+
+body {
+    background-color: var(--grey);
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+body > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    width: min(100%, 100ch);
+    max-width: 100%;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    color: var(--light-green);
+    text-shadow: 2px 2px 0px black;
+}
+
+select {
+    width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 1em;
+}
+
+th,
+td {
+    border: 1px solid var(--dark-green);
+    padding: 0.5em;
+    text-align: left;
+}
+
+th {
+    background-color: var(--light-green);
+    color: white;
+}
