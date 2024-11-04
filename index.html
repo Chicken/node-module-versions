@@ -17,14 +17,18 @@
         <h1>Node Module Versions</h1>
         <p>Only major versions bump module version. So all versions of Node.js v21.x.x support the module version of
             v21.0.0</p>
-        <select>
-            <option value="all">All runtimes</option>
-        </select>
+        <div>
+            <select>
+                <option value="all">All runtimes</option>
+            </select>
+            <input type="checkbox" id="pre-releases">
+            <label for="pre-releases">Show pre-releases</label>
+        </div>
         <table>
             <thead>
                 <th>Module Version</th>
                 <th>Runtime</th>
-                <th>Version</td>
+                <th>Version(s)</td>
             </thead>
             <tbody></tbody>
         </table>

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const table = /** @type {HTMLTableElement} */ (document.querySelector("table"));
     const runtimeSelect = /** @type {HTMLSelectElement} */ (document.querySelector("select"));
+    const preReleases = /** @type {HTMLInputElement} */ (document.querySelector("#pre-releases"));
 
     const data = await fetch(
         "https://raw.githubusercontent.com/nodejs/node/refs/heads/main/doc/abi_version_registry.json"
@@ -19,7 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         while (table.rows.length > 1) table.deleteRow(1);
 
         nodeModuleVersions
-            .filter((nmv) => runtimeSelect.value === "all" || nmv.runtime == runtimeSelect.value)
+            .filter(
+                (nmv) =>
+                    (runtimeSelect.value === "all" || nmv.runtime == runtimeSelect.value) &&
+                    (preReleases.checked || !nmv.versions.includes("pre"))
+            )
             .forEach((item) => {
                 const row = table.insertRow();
 
@@ -36,7 +41,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     populateTable();
 
-    runtimeSelect.addEventListener("change", () => {
-        populateTable();
-    });
+    runtimeSelect.addEventListener("change", () => populateTable());
+    preReleases.addEventListener("change", () => populateTable());
 });

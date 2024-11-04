@@ -3,7 +3,7 @@
 :root {
     --light-green: #68a063;
     --dark-green: #3c873a;
-    --grey: #303030;
+    --grey: #262626;
 }
 
 body {
@@ -39,7 +39,7 @@ h1 {
 }
 
 select {
-    width: 200px;
+    width: 120px;
 }
 
 table {
@@ -59,4 +59,12 @@ td {
 th {
     background-color: var(--light-green);
     color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #303030;
+}
+
+tr:nth-child(even) {
+    background-color: #404040;
 }
